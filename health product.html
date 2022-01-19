@@ -6,19 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+         #nav{
+             height: 120px;
+             display:flex;
+             background:rgb(16,132,126);
+         }
+         #nav>div{
+             
+             color:white;
+             margin:auto;
+             
+         }
+        
+         #nav>div:hover{
+             text-decoration: underline;
+         }
         #container{
+            width: 80%;
+            margin: auto;
             display: grid;
             grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(6,200px);
-            border: 1px solid black;
+            grid-template-rows: repeat(6,100px);
+            grid: 50px;
         }
-        #container>div:hover{
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        #container>#bom:hover{
+            box-shadow: rgb(16,132,126) 0px 1px 4px, rgb(16,132,126) 0px 0px 0px 3px;
         }
-      
+      #bom{
+          display: flex;
+          justify-content: space-around;
+          border: 0.1px solid rgb(207, 204, 204);
+          border-radius: 20px;
+          margin: 10px 20px 0px 0px;
+          
+      }
+      #bom>div{
+          text-align: center;
+          margin: 10px 5px 10px 0px;
+      }
     </style>
 </head>
 <body>
+    <div id="nav">
+        <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fpharmeasy-logo-white.png&w=256&q=75.png/10">
+        </div>
+        <div  onclick="window.location.href='med.html'">Order Medicine</div>
+        <div>HealthCare product</div>
+        <div>Lab Test</div>
+        <div onclick="window.location.href='signupmed.html'">Login/SignUp</div>
+        <div onclick="window.location.href='cartmed.html.html'">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
+            <span>Cart</span>
+        </div>
+     </div>
     <div id="container"></div>
 </body>
 </html>
@@ -105,19 +146,26 @@
         dicount:"Upto 30% off" 
     }
     ];
+    
     deta.map(function(ele){
     var box=document.createElement("div");
+    box.setAttribute("id","bom")
         var box1=document.createElement("div")
-        box1.setAttribute("id","bom1")
+        
      var image=document.createElement("img")
      image.setAttribute("src",ele.imag)
-     
+     box1.append(image)
+     var box2=document.createElement("div")
      var nam=document.createElement("h3")
      nam.textContent=ele.name;
+     box2.append(nam)
+
+     var box3=document.createElement("div")
      var pri=document.createElement("h5")
      pri.textContent=ele.dicount;
+     box3.append(pri)
     
-     box.append(image,nam,pri)
+     box.append(box1,box2,box3)
 
       document.querySelector("#container").append(box)
 
