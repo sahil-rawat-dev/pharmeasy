@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Packages</title>
+    <style>
+          *{
+            font-family: Open Sans,sans-serif;
+        }
+        #bottom{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:20px;
+    background-color: rgb(229, 248, 248);
+  }
+  #bottom>div>div{
+    color:grey;
+    line-height:33px;
+  }
+  h3{
+    color:black;
+  }
+  #bottom>div:hover{
+    cursor: pointer;
+  }
+  
+  #social{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:10px;
+    background-color: rgb(229, 248, 248);
+  }
+  
+  #social>div{
+    border-radius: 10px;
+    width:62px;
+    height:62px;
+    margin-top:50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  #social>div>img{
+    width:60px;
+    border-radius: 10px;
+  }
+  #payment{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    background-color: rgb(229, 248, 248);
+  }
+  #boxes{
+      display:grid;
+      grid-template-columns: repeat(4,300px);
+      margin-left:35px;
+      margin-bottom:100px;
+  }
+ 
+  #boxes>div>p{
+      width:280px;
+      font-size:18px;
+  }
+  #phone{
+      display:grid;
+      grid-template-columns: repeat(2,400px);
+      margin-bottom:100px;
+  }
+  #phone>div>img{
+      width:270px;
+      height:500px;
+      margin-left:50px;
+  }
+  #phone>div>p{
+      width:150px;;
+      height:50px;
+      background-color: rgb(71, 70, 70);
+      color:white;
+      font-weight:600;
+      text-align: center;
+     
+  }
+          #nav{
+             display:flex;
+             background:rgb(16,132,126);
+         }
+         #nav>div{
+
+             color:white;
+             margin:auto;
+         }
+         #nav>div:hover{
+             text-decoration: underline;
+         }
+
+
+         #containers{
+            display:grid;
+             margin-bottom:100px;
+            grid-template-columns :1,800px;
+            grid-template-rows: repeat(42,180px);
+            gap:20px;
+
+        }
+        #containers>div{
+
+             width:650px;
+             margin-left:300px;
+             border:1px solid rgb(216, 214, 214);
+             border-radius: 10px;
+             font-family: Open Sans,sans-serif;
+             font-size: 16px;
+              font-weight: 400;
+             padding-left:80px;
+             padding-top:20px;
+        }
+        #containers>div:hover{
+            border-color: rgb(16,132,126);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        h3{color: #585858;}
+        h1{color: #585858;
+        text-align:center;
+        margin-top:-30px;}
+        #flex{
+          display:flex;
+
+        }
+        #imgs{
+            width: 30px;
+            height:30px;
+            margin-top:20px;
+            margin-right:10px;
+        }
+         p{
+             margin-left:2px;
+             margin-right:300px;
+             margin-top:10px;
+             font-size:12px;
+             color:rgb(167, 163, 163);
+             font-weight:600;
+         }
+        button{
+            font-size:18px;
+            color:white;
+            font-weight: 600;
+            padding:0px 40px;
+            background-color: teal;
+            border-radius: 5px;
+             border:0px;
+        }
+        #sortnumber{
+            background-color: teal;
+            border-radius: 5px;
+             border:0px;
+             font-size:18px;
+            color:white;
+            font-weight: 600;
+            padding: 20px;
+        }
+        #flex1{
+          display:flex;
+          margin-top:-10px;
+        }
+
+        h4,h5{margin-left:40px;
+            color: #585858;
+            margin-right:7px;
+             margin-top:10px;
+            font-weight:600;}
+      
+    </style>
+</head>
+  <body>
+    <div id="nav">
+        <div>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png">
+        </div>
+        <div  onclick="window.location.href='med.html'">Order Medicine</div>
+        <div onclick="window.location.href='health product.html'">HealthCare product</div>
+        <div >Lab Test</div>
+        <div onclick="window.location.href='signupmed.html'">Login/SignUp</div>
+        <div onclick="window.location.href='cartmed.html'">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
+            <span>Cart</span>
+        </div>
+     </div>
+     <button
+      onclick="addtowish()"
+     style="padding:20px;margin:20px;">View Wishlist</button>
+     <select  id="sortnumber" onchange="sortNumber()">
+        <option value="">Sort by price</option>
+        <option value="low">low to high</option>
+        <option value="high">high to low</option>
+    </select>
+     <h1 >Affordable Packages</h1>
+    <div id="containers"></div>
+
+    <div id="boxes">
+        <div>
+           <img src="https://assets.pharmeasy.in/web-assets/dist/9407515b.svg?dim=0x72&dpr=1&q=100">
+          <h3>Trusted Labs</h3>
+           <p>Every test booked via PharmEasy is conducted by certified labs that are 100% verified and trustworthy.</p>
+         </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/0105ddc1.svg?dim=0x72&dpr=1&q=100">
+            <h3>Home Visit</h3>
+            <p>With PharmEasy, you get a FREE sample pick-up* by professional phlebotomists from your home or preferred location.
+            </p>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/fc71c500.svg?dim=0x72&dpr=1&q=100">
+            <h3>Timely And Accurate reports</h3>
+            <p>Once collected, samples will be sent to labs for processing. Detailed reports will be shared within a stipulated timeline.</p>
+        </div>
+        <div>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/4a11ac5a.svg?dim=0x72&dpr=1&q=100">
+            <h3>Up To 70% OFF</h3>
+            <p>At PharmEasy, you save at every step! On diagnostic tests, get up to 70% OFF on various tests and test packages.</p>
+        </div>
+    </div>
+
+    <div id="phone">
+        <div>
+        <img src="https://assets.pharmeasy.in/web-assets/dist/34a16ae8.jpg">
+        </div>
+        <div>
+            <h3>Download App For Free</h3>
+            <p>Google PLay</p>
+            <p>App Store</p>
+        </div>
+    </div>
+
+    <div id="bottom">
+        <div>
+            <div>
+            <div><h3>Company</h3></div>
+            <div>About US</div>
+            <div>Careers</div>
+            <div>Blog</div>
+            <div>Partner With PharmEasy</div>
+          </div>
+          <div>
+            <div><h3>Our Services</h3></div>
+            <div>Order Medicine</div>
+            <div>Healthcare Products</div>
+            <div>Lab Tests</div>
+          </div>
+        </div>
+        <div>
+          <div><h3>Featured Categories</h3></div>
+          <div>Covid Essentials</div>
+          <div>Healthcare Devices</div>
+          <div>Health Food and Drink</div>
+          <div>Personal Care</div>
+          <div>Ayurvedic Care</div>
+          <div>Mother and Baby Care</div>
+          <div>Accessories And Wearables</div>
+          <div>Skin Care</div>
+          <div>Diabetic Care</div>
+          <div>Health Condition</div>
+          <div>Sexual Wellness</div>
+          <div>Home Care</div>
+          <div>Fitness &amp; Supplements</div>
+          <div>Elderly Care</div>
+          <div>Pet Care</div>
+        </div>
+        <div>
+           <div>
+              <div><h3>Need Help</h3></div>
+              <div>Browse All Medicines</div>
+              <div>Browse All Molecules</div>
+              <div>Browse All Cities &amp; Areas</div>
+              <div>FAQs</div>
+            </div>
+            <div>
+              <div><h3>Policy Info</h3></div>
+              <div>Editorial Policy</div>
+              <div>Privacy Policy</div>
+              <div>Vulnerability Disclosure Policy</div>
+              <div>Terms and condition</div>
+              <div>Customer Support Policy</div>
+              <div>Return Policy</div>
+            </div>
+         </div>
+         <div id="social">
+           <div>
+             <img id="insta" src="https://img.icons8.com/ios/2x/instagram-new--v3.gif">
+           </div>
+           <div>
+            <img src="https://img.icons8.com/ios/2x/facebook-circled.png">
+          </div>
+          <div>
+            <img src="https://img.icons8.com/ios/2x/youtube-play.png">
+          </div>
+          <div>
+            <img src="https://img.icons8.com/ios/2x/twitter--v3.gif">
+          </div>
+         </div>
+      </div>
+      <div> 
+        <h3>Our Payment Partners</h3>
+        <div id="payment">
+       
+          <div>
+            <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Fgpay.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Fpaytm.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Famazon-pay.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fphonepe.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fmobikwik.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fairtel-money.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fola-money.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fmaestro.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fmastercard.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Fvisa.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Frupay.svg&amp;w=64&amp;q=75">
+          </div>
+          <div>
+            <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fdiners.svg&amp;w=64&amp;q=75">
+          </div>
+        </div>
+      </div>
+    
+</body>
+</html>
+
+<script>
+var PackagesData=[
+    {
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Fever Profile(Jaundice/Dengue/Malaria)",
+    para:"Available at 1 certified lab",
+    price:899,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Comprehensive Full Body Checkup With Vitamin D & B12",
+    para:"Available at 1 certified lab",
+    price:1399,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Comprehensive Full Body Checkup ",
+    para:"Available at 1 certified lab",
+    price:1099,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"ANtenatal Checkup (ANC)-Early Pregnancy Checkup",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Vitamin D & B12 Combo",
+    para:"Available at 1 certified lab",
+    price:699,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Master Checkup With Cancer & Arthritis Screening(Female)",
+    para:"Available at 1 certified lab",
+    price:1599,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Diabetes Care",
+    para:"Available at 1 certified lab",
+    price:499,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Women's Advanced Healthcare Package",
+    para:"Available at 1 certified lab",
+    price:1799,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Master Checkup With Cancer & Arthritis Screening(male)",
+    para:"Available at 1 certified lab",
+    price:1599,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Cancer Screening - Female",
+    para:"Available at 1 certified lab",
+    price:599,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Basic Health Checkup",
+    para:"Available at 1 certified lab",
+    price:849,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Advanced Full Body Checkup",
+    para:"Available at 1 certified lab",
+    price:949,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Healthy 2022 Full Body Checkup",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Advanced Full Body Checkup With Covid Antibody",
+    para:"Available at 1 certified lab",
+    price:1299,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Alcohol Impact Checkup",
+    para:"Available at 1 certified lab",
+    price:1499,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Anaemia Profile",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Arthritis Screening Health Checkup",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Cancer Screening - Male ",
+    para:"Available at 1 certified lab",
+    price:699,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Comprehensive Diabetes Health Checkup",
+    para:"Available at 1 certified lab",
+    price:1299,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Comprehensive Hearts Health Checkup",
+    para:"Available at 1 certified lab",
+    price:1799,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Covid Infection Monitoring",
+    para:"Available at 1 certified lab",
+    price:1999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Covid Infection Monitoring - Advanced",
+    para:"Available at 1 certified lab",
+    price:2299,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Covid Screening Advanced",
+    para:"Available at 1 certified lab",
+    price:1499,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Covid Screening Basic",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Covid Total Antibody+Covid IgG Antibody Combo",
+    para:"Available at 1 certified lab",
+    price:1499,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Covid-19 Health Checkup(Post Recovery",
+    para:"Available at 1 certified lab",
+    price:1799,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Covid-19 Total Antibody (IgG+IgM)",
+    para:"Available at 1 certified lab",
+    price:849,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Diabetes Care - Pack of 3",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Female Hormone-Screening",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Full Body Health Checkup With Vitamin D",
+    para:"Available at 1 certified lab",
+    price:799,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Hair Fall Screening",
+    para:"Available at 1 certified lab",
+    price:899,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Healthy Lung And Body Checkup",
+    para:"Available at 1 certified lab",
+    price:999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Immunity Health Checkup",
+    para:"Available at 1 certified lab",
+    price:599,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Non-Fasting Advanced Health Checkup",
+    para:"Available at 1 certified lab",
+    price:899,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"PCOD Screening",
+    para:"Available at 1 certified lab",
+    price:1299,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Priliminary Health Checkup",
+    para:"Available at 1 certified lab",
+    price:499,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Tax Saver Pack - Comprehensive Full Body Checkup With Vitamin D & B12(Pack of 2)",
+    para:"Available at 1 certified lab",
+    price:2789,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Tax Saver Pack - Comprehensive Full Body Checkup With Vitamin D & B12(Pack of 4)",
+    para:"Available at 1 certified lab",
+    price:5596,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Thyroid Care",
+    para:"Available at 1 certified lab",
+    price:499,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Thyroid Care - Pack Of 3",
+    para:"Available at 1 certified lab",
+    price:899,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Vegetarians Care package",
+    para:"Available at 1 certified lab",
+    price:1999,
+    para2:"onwards",
+},
+{
+    imgUrl:"https://assets.pharmeasy.in/web-assets/dist/dea295a0.svg",
+    head:"Winter Care Health Checkup",
+    para:"Available at 1 certified lab",
+    price: 799,
+    para2:"onwards",
+},
+
+]
+
+var PackagesArr = JSON.parse(localStorage.getItem("cartTestitem"))||[];
+      displayData(PackagesData)
+
+function sortNumber(){
+      var selected=document.querySelector("#sortnumber").value 
+      if(selected=="low"){
+          PackagesData.sort(function(a,b){
+              return Number(a.price)-Number(b.price)
+          })
+      }
+      if(selected=="high"){
+          PackagesData.sort(function(a,b){
+              return Number(b.price)-Number(a.price)
+          })
+      }
+      console.log(PackagesData)
+      displayData(PackagesData)
+    }
+
+       function displayData(PackagesData){
+       document.querySelector("#containers").innerHTML=""
+       PackagesData.map(function(elem){
+
+       var div=document.createElement("div");
+
+       var div1=document.createElement("div")
+        div1.setAttribute("id","flex1")
+
+        var image=document.createElement("img")
+        image.setAttribute("src",elem.imgUrl)
+        image.setAttribute("id","imgs")
+
+        var h2=document.createElement("h3")
+        h2.textContent=elem.head
+
+        var p=document.createElement("h5")
+        p.textContent=elem.para
+        p.style.marginTop="-10px"
+
+        var div2=document.createElement("div")
+        div2.setAttribute("id","flex")
+
+        var p1=document.createElement("h4")
+        p1.textContent=elem.price
+
+
+        var p2=document.createElement("p")
+        p2.textContent=elem.para2
+
+
+
+        var btn=document.createElement("button")
+        btn.textContent="Select"
+        btn.addEventListener("click",function(){
+             Select(elem)
+            });
+
+            div1.append(image,h2)
+       div2.append(p1,p2,btn)
+        div.append(div1,p,div2)
+       document.querySelector("#containers").append(div)
+}) 
+       }
+function Select(elem){
+    PackagesArr.push(elem);
+   localStorage.setItem("cartTestitem",JSON.stringify(PackagesArr));
+   alert("Added To Wishlist");
+  }
+
+  function addtowish(elem){
+
+   window.location.href="wishlist.html"
+  }
+
+</script> 
+	
+  </body>
+     

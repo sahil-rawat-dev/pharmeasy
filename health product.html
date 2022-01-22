@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+       
          #nav{
              height: 120px;
              display:flex;
@@ -20,6 +21,8 @@
         
          #nav>div:hover{
              text-decoration: underline;
+             
+             
          }
         #container{
             width: 80%;
@@ -31,6 +34,7 @@
         }
         #container>#bom:hover{
             box-shadow: rgb(16,132,126) 0px 1px 4px, rgb(16,132,126) 0px 0px 0px 3px;
+            cursor: pointer;
         }
       #bom{
           display: flex;
@@ -45,6 +49,67 @@
           margin: 10px 5px 10px 0px;
       }
     </style>
+
+    <!-- top siding bar -->
+
+    <style>
+        #topbar{
+            margin: auto;
+            width: 100%;
+        }
+        .topone{
+            margin: auto;
+            justify-content: center;
+        }
+    
+    </style>
+
+    <!-- paracont -->
+    <STYle>
+      #lastborder{
+        width: 90%;
+        margin:auto;
+      }
+          #paracont >p,li{
+          color:grey;
+        }
+        #bottom{
+          display:grid;
+          grid-template-columns: repeat(4,1fr);
+          grid-gap:20px;
+        }
+        #bottom>div>div{
+          color:grey;
+        }
+        h3{
+          color:black;
+        }
+        #bottom>div:hover{
+          cursor: pointer;
+        }
+        
+        #social{
+          display:grid;
+          grid-template-columns: repeat(4,1fr);
+          grid-gap:10px;
+        }
+        
+        #social>div{
+          border-radius: 10px;
+          width:62px;
+          height:62px;
+          margin-top:50px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        #social>div>img{
+          width:60px;
+          border-radius: 10px;
+        }
+        #payment{
+          display:grid;
+          grid-template-columns: repeat(12,1fr);
+        }
+    </STYle>
 </head>
 <body>
     <div id="nav">
@@ -52,15 +117,159 @@
             <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fpharmeasy-logo-white.png&w=256&q=75.png/10">
         </div>
         <div  onclick="window.location.href='med.html'">Order Medicine</div>
-        <div>HealthCare product</div>
-        <div>Lab Test</div>
+        <div onclick="window.location.href='health product.html'">HealthCare product</div>
+        <div onclick="window.location.href='cartTest.html'">Lab Test</div>
         <div onclick="window.location.href='signupmed.html'">Login/SignUp</div>
-        <div onclick="window.location.href='cartmed.html.html'">
+        <div onclick="window.location.href='cartmed.html'">
             <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
             <span>Cart</span>
         </div>
      </div>
+     <br>
+     <div id="topbar"></div>
+
+
     <div id="container"></div>
+    <div id="bottom"></div>
+    <br>
+
+    <div id="lastborder">
+      <div id="lastimg"></div>
+  <div id="paracont">
+      <h3>India's No. 1 Medicine Delivery App</h3>
+      <p>The concept of medicine home delivery has been taken to a new level by the PharmEasy online medicine delivery app. You can use the PharmEasy online medicine delivery app to browse through an extensive range of medicines. Each medicine undergoes a 3-step quality check.<br>
+       Whatever be your medicinal requirement, you are sure to locate it in this online pharmacy. All you have to do then is to add it to your cart and place the order. In 3 hours*, the medicines will be delivered to you. Indias beloved online medicine delivery app makes sure that you get your medicines in record time because we know how vital time is in any treatment. Sit back, and we will have all your medical necessities delivered to your doorstep.</p>
+      <h3>Online Medicine - Your Online Medical Store in India</h3>
+      <p>Tired of walking all the way to your local medicine store? Worried that going out is risky during the current times? Order medicines online at PharmEasy, Indias trusted online medicine app. With more than 1 lakh medicines always in stock, you are sure to find what you are looking for, and that too at affordable prices!
+
+       Besides, extremely stringent sanitization norms are followed at your favourite online medical store. PharmEasy takes the safety of customers and employees very seriously.</p>
+       <h3>Reasons To Buy Medicine Online From PharmEasy</h3>
+       <ul>
+         <li>1,200+ cities and 20,000+ Pin codes served</li>
+         <li>Medicine delivery within 3 hours*</li>
+         <li>1 Lakh+ medicines available</li>
+         <li>Cash on delivery option available</li>
+         <li>Attractive offers</li>
+         <li>Cashback option through wallet</li>
+         <li>Stringent quality checks</li>
+         <li>Garnered the trust of more than 10 million users who have made an online purchase through PharmEasy</li>
+       </ul>
+       <h2>Order Medicines Online</h2>
+       <h3>Get 3-Step Quality-checked Medicines</h3>
+       <p>PharmEasy is a one-stop-shop for all your healthcare needs. We have 1L+ products for you to choose from. Buy medicines online at affordable prices from the comforts of your home in just a few clicks and get them delivered at your doorstep.
+         The entire process of shopping for medicines is hassle-free and convenient. All you have to do is search for the products you need on our website or app, add to cart and then proceed with the checkout process.
+         With our scheduled refill reminder, you dont even need to keep track of your refill dates.
+         Whats more, we have great offers, with added discounts and massive e-wallet cashbacks on purchasing medicines!</p>
+     </div>
+     <div id="bottom">
+      <div>
+          <div>
+          <div><h3>Company</h3></div>
+          <div>About US</div>
+          <div>Careers</div>
+          <div>Blog</div>
+          <div>Partner With PharmEasy</div>
+        </div>
+        <div>
+          <div><h3>Our Services</h3></div>
+          <div>Order Medicine</div>
+          <div>Healthcare Products</div>
+          <div>Lab Tests</div>
+        </div>
+      </div>
+      <div>
+        <div><h3>Featured Categories</h3></div>
+        <div>Covid Essentials</div>
+        <div>Healthcare Devices</div>
+        <div>Health Food and Drink</div>
+        <div>Personal Care</div>
+        <div>Ayurvedic Care</div>
+        <div>Mother and Baby Care</div>
+        <div>Accessories And Wearables</div>
+        <div>Skin Care</div>
+        <div>Diabetic Care</div>
+        <div>Health Condition</div>
+        <div>Sexual Wellness</div>
+        <div>Home Care</div>
+        <div>Fitness & Supplements</div>
+        <div>Elderly Care</div>
+        <div>Pet Care</div>
+      </div>
+      <div>
+         <div>
+            <div><h3>Need Help</h3></div>
+            <div>Browse All Medicines</div>
+            <div>Browse All Molecules</div>
+            <div>Browse All Cities & Areas</div>
+            <div>FAQs</div>
+          </div>
+          <div>
+            <div><h3>Policy Info</h3></div>
+            <div>Editorial Policy</div>
+            <div>Privacy Policy</div>
+            <div>Vulnerability Disclosure Policy</div>
+            <div>Terms and condition</div>
+            <div>Customer Support Policy</div>
+            <div>Return Policy</div>
+          </div>
+       </div>
+       <div id="social">
+         <div >
+           <img id="insta" src="https://img.icons8.com/ios/2x/instagram-new--v3.gif">
+         </div>
+         <div>
+          <img src="https://img.icons8.com/ios/2x/facebook-circled.png">
+        </div>
+        <div>
+          <img src="https://img.icons8.com/ios/2x/youtube-play.png">
+        </div>
+        <div>
+          <img src="https://img.icons8.com/ios/2x/twitter--v3.gif">
+        </div>
+       </div>
+    </div>
+    <div>
+      <h3>Our Payment Partners</h3>
+      <div id="payment">
+        <div>
+          <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Fgpay.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Fpaytm.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Famazon-pay.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fphonepe.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fmobikwik.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fairtel-money.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fola-money.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fmaestro.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fmastercard.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Fvisa.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="	https://pharmeasy.in/_next/image?url=%2Ficons%2Frupay.svg&w=64&q=75">
+        </div>
+        <div>
+          <img src="https://pharmeasy.in/_next/image?url=%2Ficons%2Fdiners.svg&w=64&q=75">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 <script>
@@ -166,8 +375,65 @@
      box3.append(pri)
     
      box.append(box1,box2,box3)
+     box.addEventListener("click",function(){
+         window.location.href="med.html"
+     })
+    
 
       document.querySelector("#container").append(box)
 
 });
+
+
+</script>
+
+<!-- top slidingbar -->
+<script>
+    var health=[
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2F6a08130ea4e-Everyuth1-CB-Jan22.jpg&w=750&q=75"
+        },
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2F711032a7dc9-Ostocalcium.jpg&w=750&q=75"
+        },
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2F46de40d4be6-fast-up.png&w=750&q=75"
+        },
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2Fbe0ce0bd060-Johnson-InsideCB-Oct21.jpg&w=750&q=75"
+        },
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2Fccdca1569be-Moha-CB-Jan.jpg&w=750&q=75"
+        },
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2Fc77ed5623a7-Siddhayu-CB-Jan22-min.jpg&w=750&q=75"
+        },
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2Ff190cbe684b-Otrivin-CB-Jan.jpg&w=750&q=75"
+        },
+        {
+            img:"https://pharmeasy.in/_next/image?url=https%3A%2F%2Fcms-contents.pharmeasy.in%2Fbanner%2Ff97f8619caf-Boldcare-Men-InsideCB-Nov21.png&w=750&q=75"
+        }
+       
+    ]
+
+    health.map(function(ele){
+        var topbar1=document.createElement("div")
+        topbar1.setAttribute("class","topone")
+        var imag=document.createElement("img")
+        imag.setAttribute("src",ele.img)
+        topbar1.append(imag)
+        document.querySelector("#topbar").append(topbar1)
+    })
+    var slideindex=0
+    showslide();
+    function showslide(){
+        var slide=document.getElementsByClassName("topone")
+        for(var i=0;i<slide.length;i++){
+            slide[i].style.display="none"
+        }slideindex++
+        if(slideindex>slide.length){slideindex=1}
+        slide[slideindex-1].style.display="flex"
+        setTimeout(showslide,2000)
+    }
 </script>

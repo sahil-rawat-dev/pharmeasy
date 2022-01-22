@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #nav{
+             display:flex;
+             background:rgb(16,132,126);
+             margin:auto;
+            
+         }
+         #logopharm{
+           height:70px;
+         }
+         #nav>div{
+             
+             color:white;
+             margin:auto;
+             font-size:22px;
+         }
+         #imgcont{
+             margin:auto;
+         }
+         #nav>div:hover{
+             text-decoration: underline;
+         }
+          body{
+              text-align:center;
+          }
+          
+          body{
+              background-image: url(https://image.freepik.com/free-photo/medicines-medical-supplies-placed-blue_1150-19151.jpg);
+              background-size: 100%;
+          }
+          #container{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width:25%;
+            height:400px;
+            margin-left:10%;
+            margin-top:5%;
+            background:white;
+            color:rgb(16,132,126);
+            border-radius: 15px;
+          }
+          form>p{
+              color:black;
+              font-weight:bold;
+              
+          }
+          form{
+            text-align:left;
+            margin-left:10px;
+          }
+          #email,#pass{
+              height:30px;
+              width:90%;
+          }
+          input:nth-child(6){
+              margin-top:20px;
+              background:rgb(21, 187, 179);
+              border:0px;
+              width:70%;
+              margin-left:10%;
+              padding:10px;
+              border-radius:10px;
+          }
+          input:nth-child(6):hover{
+              background:grey;
+          }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div>
+            <img id="logopharm" src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png">
+        </div>
+        <div id="omed" onclick="window.location.href='med.html'">Order Medicine</div>
+        <div id="hcp">HealthCare product</div>
+        <div id="lt">Lab Test</div>
+        <div id="sup" onclick="window.location.href='signupmed.html'">Login/SignUp</div>
+        <div id="cart" onclick="window.location.href='cartmed.html'">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
+            <span>Cart</span>
+        </div>
+     </div>
+    <div id="container">
+        <h1>Log-In</h1>
+        <form>
+            <p>Username</p>
+            <input id="email" type="text" placeholder="Enter user name"/>
+            <p>password</p>
+            <input id="pass" type="password" placeholder="enter password"/>
+            <br>
+            <input type="submit"value="login"/>         
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", signin);
+
+var regdUsers = JSON.parse(localStorage.getItem("userDataBase"));
+
+function signin(event) {
+  event.preventDefault();
+  var pass = document.querySelector("#pass").value;
+  var user = document.querySelector("#email").value;
+
+  for (var i = 0; i < regdUsers.length; i++) {
+    console.log(regdUsers[i].userName, regdUsers[i].passwd);
+    if (regdUsers[i].userName == user && regdUsers[i].passwd == pass) {
+      window.location.href = "homemed.html";
+    }
+  }
+}
+</script>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>	
+<html lang="en">	
+<head>	
+    <meta charset="UTF-8">	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
+    <title>Checkout</title>	
+    <style>	
+          *{	
+            font-family: Open Sans,sans-serif;	
+        }	
+         #nav{	
+           display:flex;	
+           background:rgb(16,132,126);	
+       }	
+       #nav>div{	
+
+           color:white;	
+           margin:auto;	
+       }	
+       #nav>div:hover{	
+           text-decoration: underline;	
+       }	
+
+
+        #name{font-size:16px;margin-left:130px;}	
+        #num{font-size:16px;margin-left:130px;}	
+        #cvv{font-size:16px;margin-left:130px;}	
+        #date{font-size:16px;margin-left:130px;}	
+        #check{	
+            padding:15px;	
+          font-size:20px;	
+          border-radius: 10px;	
+          background-color: powderblue;	
+          margin-left:130px;	
+          margin-top:30px;	
+        }	
+        form{	
+            background-color:rgb(16,132,126);	
+            width:450px;	
+            margin-left:450px;	
+            height:450px;	
+        }	
+        h3{	
+            color:white;	
+            text-align: center;	
+
+        }	
+    </style>	
+</head>	
+<body>	
+    <div id="nav">	
+        <div>	
+            <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png">	
+        </div>	
+        <div  onclick="window.location.href='med.html'">Order Medicine</div>	
+        <div onclick="window.location.href='health product.html'">HealthCare product</div>	
+        <div onclick="window.location.href='APackeges.html'">Lab Test</div>	
+        <div onclick="window.location.href='signupmed.html'">Login/SignUp</div>	
+        <div onclick="window.location.href='cartmed.html.html'">	
+            <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">	
+            <span>Cart</span>	
+        </div>	
+     </div>	
+    <h1>Check Out Page</h1>	
+
+    <form>	
+        <h3 style=" padding-top:20px;">Enter Name</h3>	
+        <input id="name" type="text" placeholder="Enter name"/>	
+    </br>	
+         <h3>Enter Card Number</h3>	
+        <input id="num" type="number" placeholder="Enter card num"/>	
+    </br>	
+         <h3>Enter cvv</h3>	
+        <input id="cvv" type="password"  placeholder="Enter cvv"/>	
+    </br>	
+        <h3>Enter Expiry date</h3>	
+         <input id="date" type="month" />	
+        </br>	
+        <input  id="check" type="submit" placeholder="pay"/>	
+    </form>	
+
+</body>	
+</html>	
+
+<script>	
+   document.querySelector("form").addEventListener("submit",payform)	
+   function payform(event){	
+       event.preventDefault()	
+       var name=document.querySelector("#name").value 	
+       var cardnum=document.querySelector("#num").value 	
+       var cvv=document.querySelector("#cvv").value 	
+       var expiry=document.querySelector("#date").value 	
+
+  if(cardnum!=="1234567890" ){	
+        alert("error")	
+   }	
+   else{	
+   window.location.href="OTP.html"	
+}}	
+</script> 	

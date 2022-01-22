@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <style>
+        *{
+           font-family:  'Montserrat', sans-serif;
+      }
+
+         #nav{
+             display:flex;
+             background:rgb(16,132,126);
+         }
+         #nav>div{
+
+             color:white;
+             margin:auto;
+         }
+         #nav>div:hover{
+             text-decoration: underline;
+         }
+body{
+    background-color: rgb(245, 247, 247) ;;
+}
+#content{
+    color:rgb(68, 67, 67);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 550px;
+    height: 300px;
+    border:1px solid rgb(170, 168, 168);
+    margin:auto;
+    margin-top:100px;
+    border-radius: 10px;
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+   #box{
+     color:white;
+     text-align: center;
+     font-style: italic;
+     font-size:50px;
+     background-color:rgb(16,132,126) ;
+     width:550px;
+     height:90px;
+     border-radius: 10px;
+   } 
+   button{
+       background-color:rgb(16,132,126)  ;
+       width:380px;
+       height:50px;
+       border-radius: 10px;
+       font-size:30px;
+       color:white;
+       margin-top:10px;
+   }
+   #pic{
+       color:red;
+       background-color: white;
+       border:0px;
+       font-size:16px;
+       font-weight:600;
+       margin-top:10px;
+ 
+   }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png">
+        </div>
+        <div  onclick="window.location.href='med.html'">Order Medicine</div>
+        <div  onclick="window.location.href='health product.html'">HealthCare product</div>
+        <div onclick="window.location.href='APackeges.html'">Lab Test</div>
+        <div onclick="window.location.href='med.html'">Home Page</div>
+        <div onclick="window.location.href='cartmed.html.html'">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
+            <span>Cart</span>
+        </div>
+     </div>
+   <div id="content">
+       <div id="box">
+           Success✔ </div>
+           <p>Your booking has been confirmed.</p>
+           <p>Check your email for details</p>
+           <button onclick="myfunction()">ok</button>
+           <input onclick="window.location.href='homemed.html'" id="pic"
+           value="Back To Home Page"></input>
+   </div>
+
+
+</body>
+</html>
+<script>
+      function myfunction(){
+          alert("Cogratulations!")
+      }
+</script>

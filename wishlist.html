@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wishlist</title>
+    <style>
+          *{
+            font-family: Open Sans,sans-serif;
+        }
+          #nav{
+             display:flex;
+             background:rgb(16,132,126);
+         }
+         #nav>div{
+
+             color:white;
+             margin:auto;
+         }
+         #nav>div:hover{
+             text-decoration: underline;
+         }
+
+
+         #containers{
+            display:grid;
+
+            grid-template-columns :1,800px;
+            grid-template-rows: repeat(42,180px);
+            gap:20px;
+
+        }
+        #containers>div{
+
+             width:650px;
+             margin-left:300px;
+             border:1px solid rgb(216, 214, 214);
+             border-radius: 10px;
+             font-family: Open Sans,sans-serif;
+             font-size: 16px;
+              font-weight: 400;
+             padding-left:80px;
+             padding-top:20px;
+        }
+        #containers>div:hover{
+            border-color: rgb(16,132,126);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        h3{color: #585858;}
+        h1{color: #585858;
+        text-align:center;
+        margin-top:-30px;}
+        #flex{
+          display:flex;
+
+        }
+        #imgs{
+            width: 30px;
+            height:30px;
+            margin-top:20px;
+            margin-right:10px;
+        }
+         p{
+             margin-left:2px;
+             margin-right:300px;
+             margin-top:10px;
+             font-size:12px;
+             color:rgb(167, 163, 163);
+             font-weight:600;
+         }
+        button{
+            font-size:18px;
+            color:white;
+            font-weight: 600;
+            padding:0px 40px;
+            background-color: teal;
+            border-radius: 5px;
+             border:0px;
+        }
+        #flex1{
+          display:flex;
+          margin-top:-10px;
+        }
+
+        h4,h5{margin-left:40px;
+            color: #585858;
+            margin-right:7px;
+             margin-top:10px;
+            font-weight:600;}
+
+        h1{
+           margin-top:20px;
+           text-decoration: underline;
+        }
+      
+    </style>
+</head>
+  <body>
+    <div id="nav">
+        <div>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png">
+        </div>
+        <div  onclick="window.location.href='med.html'">Order Medicine</div>
+        <div  onclick="window.location.href='health product.html'">HealthCare product</div>
+        <div onclick="window.location.href='cartTest.html'">Lab Test</div>
+        <div onclick="window.location.href='signupmed.html'">Login/SignUp</div>
+        <div onclick="window.location.href='cartmed.html.html'">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
+            <span>Cart</span>
+        </div>
+     </div>
+     <h1>Your Wishlist</h1>
+     
+     <div id="containers">
+        
+     </div>
+
+
+</body>
+
+<script>
+    var  PackagesArr=JSON.parse(localStorage.getItem("cartTestitem"));
+    var wishArr=JSON.parse(localStorage.getItem("cartitem"))||[];
+    displayData(PackagesArr)
+   
+function displayData(PackagesArr){
+   
+    PackagesArr.map(function(elem){
+      
+    var div=document.createElement("div");
+
+    var div1=document.createElement("div")
+     div1.setAttribute("id","flex1")
+
+     var image=document.createElement("img")
+     image.setAttribute("src",elem.imgUrl)
+     image.setAttribute("id","imgs")
+
+     var h2=document.createElement("h3")
+     h2.textContent=elem.head
+
+     var p=document.createElement("h5")
+     p.textContent=elem.para
+     p.style.marginTop="-10px"
+
+     var div2=document.createElement("div")
+     div2.setAttribute("id","flex")
+
+     var p1=document.createElement("h4")
+     p1.textContent=elem.price
+
+
+     var p2=document.createElement("p")
+     p2.textContent=elem.para2
+
+
+
+     var btn=document.createElement("button")
+     btn.textContent="Add To Cart"
+     btn.addEventListener("click",function(){
+          addtocart(elem)
+         });
+
+         div1.append(image,h2)
+    div2.append(p1,p2,btn)
+     div.append(div1,p,div2)
+    document.querySelector("#containers").append(div)
+}) 
+    }
+function addtocart(elem){
+ wishArr.push(elem);
+localStorage.setItem("cartitem",JSON.stringify(wishArr))
+window.location.href="cartTest.html" 
+}
+</script>

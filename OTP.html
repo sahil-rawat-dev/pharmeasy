@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= initial-scale=1.0">
+    <title>OTP</title>
+     <style>
+      
+        #nav{
+           display:flex;
+           background:rgb(16,132,126);
+       }
+       #nav>div{
+
+           color:white;
+           margin:auto;
+       }
+       #nav>div:hover{
+           text-decoration: underline;
+       } 
+       #otpbox{
+        width:600px;
+        height:400px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin:auto;
+        margin-top:70px;
+        background-color:white
+       }
+       h2,form{
+           padding-left:240px;
+           color:black;
+       }
+       #input{
+           font-size:20px;
+           margin-left:-50px;
+       }
+       h1{
+           padding-left:260px;
+           padding-top:20px;
+           color:black;
+       }
+       p{
+        padding-left:150px;
+        padding-right:100px;
+       font-size:20px;
+        color:black;
+       }
+       button{
+           font-size:20px;
+           background-color:rgb(214, 166, 166);
+           padding:10px 30px;
+       }
+    </style>
+</head>
+<body>
+
+    <div id="nav">
+        <div>
+            <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png">
+        </div>
+        <div  onclick="window.location.href='med.html'">Order Medicine</div>
+        <div onclick="window.location.href='health product.html'">HealthCare product</div>
+        <div onclick="window.location.href='APackeges.html'">Lab Test</div>
+        <div onclick="window.location.href='signupmed.html'">Login/SignUp</div>
+        <div onclick="window.location.href='cartmed.html.html'">
+            <img src="https://assets.pharmeasy.in/web-assets/dist/21b0b5ba.svg">
+            <span>Cart</span>
+        </div>
+     </div>
+     <div id="otpbox">
+         <h1>OTP</h1>
+        <h2>verification</h2>
+        <p>Enter the verification code we just sent you on your Email address</p>
+        <form>
+        <input  id="input" type="password" placeholder="Enter OTP"/>
+        </br>
+    </br>
+    </br>
+        <button>verify</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+     document.querySelector("form").addEventListener("submit",optenter)
+
+function optenter(event){
+    event.preventDefault()
+    var otp=document.querySelector("#input").value 
+    if(otp=="1234"){
+        alert("Payment Successful")
+        window.location.href="success.html"
+}
+    if(otp!="1234"){
+        alert("The Code entered is incorrect")
+    }
+}
+</script>
